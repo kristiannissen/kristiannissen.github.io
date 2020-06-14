@@ -5,9 +5,9 @@
 layout: default
 ---
 
-<ul>
+<ul class="site__posts-list">
   {% for post in site.posts %}
-    <li>
+    <li class="site__posts-list-item">
       <article>
         <header>
           <h1>

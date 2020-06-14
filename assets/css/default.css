@@ -1,25 +1,11 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-body {
-  font: normal normal 16px sans-serif;
-  line-height: 1.5;
-}
-header,
-main,
-footer {
+.site__header,
+.site__content,
+.site__footer {
   display: flex;
   max-width: 46em;
   margin: 0 auto;
 }
-header a {
-  font-family: serif;
-}
-ul {
-  margin: 0;
-  padding: 0;
+.site__posts-list {
   list-style-type: none;
 }
 footer {

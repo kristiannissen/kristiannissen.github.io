@@ -29,7 +29,7 @@ twitter_username: kristiannissen
 github_username: kristiannissen
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
 
