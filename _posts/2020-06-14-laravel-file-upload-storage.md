@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Laravel file upload med Storage"
-date:   2020-06-14 10:00:00
+date:   2020-06-14 10:00:00 +0200
 categories: laravel
 ---
 ## Hold nu op!

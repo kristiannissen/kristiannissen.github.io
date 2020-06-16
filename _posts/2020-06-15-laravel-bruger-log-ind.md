@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Laravel bruger log ind"
-date:   2020-06-15 11:00:00
+date:   2020-06-15 11:00:00 +0200
 categories: laravel
 ---
 Laravel har en rigtig god ud-af-boksen log ind håndtering men for at holde projeket simpelt, har jeg valgt at implementere min egen løsning baseret på Laravels funktioner.

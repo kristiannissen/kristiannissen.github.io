@@ -1,10 +1,9 @@
 ---
 layout: post
 title:  "Laravel Tinker er fantastisk"
-date:   2020-06-12 10:30:10
+date:   2020-06-12 10:30:10 +0200
 categories: laravel tinker
 ---
-# TL;DR
 Med Tinker kan du teste kode direkte i terminalen.
 
 Start tinker
