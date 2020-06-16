@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Laravel Tinker er fantastisk"
-date:   2020-06-12 10:30:10 +0200
+date:   2020-06-12 10:30:10
 categories: laravel tinker
 ---
 # TL;DR
