@@ -16,6 +16,7 @@ footer {
 }
 footer div {
   align-self: flex-start;
+  min-width: 33%;
 }
 .site__content {
   padding: 0 1.25em;

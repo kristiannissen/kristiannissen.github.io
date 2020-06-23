@@ -61,4 +61,6 @@ $my_coffee = new Coffee(new BashParser);
 ```
 Vil man gerne have mulighed for flere bask muligheder kan man føje dem til BashParser'ens pattern og replacements.
 
-Det var en sjov udfordring, og bare fordi jeg synes det var sjovt, sendte jeg mit løsningsforslal til Morningtrain.dk
+Det var en sjov udfordring, og bare fordi jeg synes det var sjovt, sendte jeg mit løsningsforslal til Morningtrain.dk.
+### Opdatering
+Jeg kunne ikke holde eval() løsningen ud, det er simpelthen for latterligt så jeg skrev det om, stærkt inspireret af det forslag divinity76 at gmail dot com har på php.net. Du finder hele skiftet i [dette commit](https://github.com/kristiannissen/morningcoffee/commit/c46bf5722a69b9935593285c75760042e0c0907d).
