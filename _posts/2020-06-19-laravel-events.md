@@ -3,9 +3,11 @@ layout: post
 title:  "Laravel Events"
 date:   2020-06-19 12:31:00 +0200
 categories: laravel
+tags: [Laravel, Laravel Events]
+excerpt_separator: <!--more-->
 ---
 Egentlig skal jeg ikke bruge Events til noget specielt i den applikation jeg arbejder på, det er vel blevet et COVID-19 hobby projekt for bare at holde gang i de små grå.
-
+<!--more-->
 ## Laravel Events
 Det gik ikke helt som præsten prædiker, eller i dette tilfælde, som det stod skrevet i Laravel 7 dokumentationen. Det er også muligt mine tømmermænd spiller mig et pus, fokuseret læsning er sgu ikke så nemt når hjerne er optaget af selvynk.
 

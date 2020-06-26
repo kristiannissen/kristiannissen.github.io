@@ -3,9 +3,11 @@ layout: post
 title:  "PHP Kode Udfordring"
 date:   2020-06-22 16:34:00 +0200
 categories: php
+tags: [PHP]
+excerpt_separator: <!--more-->
 ---
 Jeg fandt ved et tilfælde Morningtrain.dk's kodeudfordring, den de bruger når de ansætter udviklere, både JavaScript og PHP udfordringen er interessante udfordinger.
-
+<!--more-->
 ### Lav en simpel men fleksibel template parser
 Hvilket vil sige, at udfordringen er, at indlæse HTML som indeholder "tokens" og disse "tokens" skal så dynamisk erstattes med PHP kode. Her er et eksempel:
 ```

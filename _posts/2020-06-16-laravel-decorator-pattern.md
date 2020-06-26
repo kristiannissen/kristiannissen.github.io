@@ -3,8 +3,11 @@ layout: post
 title:  "Laravel Decorator Pattern"
 date:   2020-06-16 22:19:00 +0200
 categories: laravel
+tags: [Laravel, Decorator Patter, Repository Pattern]
+excerpt_separator: <!--more-->
 ---
 Den løsning jeg har valgt til, hvordan billeder hentes for en enkelt blog post, er jeg ikke glad for. Udfordringen er, at jeg gør brug af Cache inde i min model, hvilket bare er noget snask. Modellen skal ikke vide noget om Caching, det hører til ude i Controlleren, ikke i Modellen.
+<!--more-->
 ```
 <?php
 

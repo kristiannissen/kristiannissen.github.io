@@ -3,9 +3,11 @@ layout: post
 title:  "Laravel bruger log ind"
 date:   2020-06-15 11:00:00 +0200
 categories: laravel
+tags: [Laravel, Bruger Log ind]
+excerpt_separator: <!--more-->
 ---
 Laravel har en rigtig god ud-af-boksen log ind håndtering men for at holde projeket simpelt, har jeg valgt at implementere min egen løsning baseret på Laravels funktioner.
-
+<!--more-->
 ## Route::group og middleware
 Jeg har en Route::group() som sætter prefix på de routes der hører til administrationen af applikationen.
 

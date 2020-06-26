@@ -3,9 +3,11 @@ layout: post
 title:  "PHP Kode Udfordring men droppede afhængigheden til regex"
 date:   2020-06-23 09:52:00 +0200
 categories: php
+tags: [PHP]
+excerpt_separator: <!--more-->
 ---
 Jeg droppede sent mandag aften at droppe den store afhængighed til regulære udtryk i min [template parser](https://github.com/kristiannissen/morningcoffee/blob/master/src/MorningCoffee/BashParser.php), problemet med at normalisere whitespace gjorde løsingen skrøbelig.
-
+<!--more-->
 ## Læs 1 linje af gangen
 I stedet for at være afhængig af regulære udtryk, valgte jeg at indlæse HTML en linje af gangen og håndtere den. På den måde kunne jeg droppe problemet med whitespace i min regulære udtryk. Det blev til en ekstra hjælpe klasse som gør det muligt at genbruge de samme streng funktioner igen og igen.
 

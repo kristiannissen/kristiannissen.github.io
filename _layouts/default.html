@@ -29,7 +29,12 @@
         Jeg arbejder som personaleleder, projektleder og hygge-programmerer og brygger øl i min fritid.
       </div>
       <div class="tags">
-        tags/categories
+        {% for tag in site.tags %}
+          {{ tag[0] }}:
+          {% for post in tag[1] %}
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          {% endfor %}
+        {% endfor %}
       </div>
     </footer>
   </body>

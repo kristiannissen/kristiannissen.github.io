@@ -3,9 +3,11 @@ layout: post
 title:  "Laravel Tinker er fantastisk"
 date:   2020-06-12 10:30:10 +0200
 categories: laravel tinker
+tags: [Laravel, Tinker]
+excerpt_separator: <!--more-->
 ---
 Med Tinker kan du teste kode direkte i terminalen.
-
+<!--more-->
 Start tinker
 {% highlight php %}
 php artisan tinker
