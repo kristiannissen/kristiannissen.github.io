@@ -8,7 +8,6 @@ excerpt_separator: <!--more-->
 ---
 Egentlig skal jeg ikke bruge Events til noget specielt i den applikation jeg arbejder på, det er vel blevet et COVID-19 hobby projekt for bare at holde gang i de små grå.
 <!--more-->
-## Laravel Events
 Det gik ikke helt som præsten prædiker, eller i dette tilfælde, som det stod skrevet i Laravel 7 dokumentationen. Det er også muligt mine tømmermænd spiller mig et pus, fokuseret læsning er sgu ikke så nemt når hjerne er optaget af selvynk.
 
 Men efter lidt læsning fik jeg det på plads. Jeg forstod dokumentationen på den måde at jeg bare skulle registrere mine events og så ville Laravel på magisk vis oprette mapper og filer for mig... Not quit.
@@ -101,14 +100,14 @@ Men som jeg skrev tidligere, skal jeg ikke bruge denne event til noget, andet en
 
 Registrering af min event og listener sker i App\Providers\EventServiceProvider
 ```
-    protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
-        ],
-        ImageProcessed::class => [
-          SendImageProcessedNotification::class,
-        ],
-    ];
+protected $listen = [
+    Registered::class => [
+        SendEmailVerificationNotification::class,
+    ],
+    ImageProcessed::class => [
+      SendImageProcessedNotification::class,
+    ],
+];
 ```
 Ved hjælp af tinker kan jeg så teste logikken, heldigvis husker tinker min sidste kommando så selv om det ikke er muligt at reloade en session, så hjælper tinker alligevel ved at huske sidste kommando.
 ```
