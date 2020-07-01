@@ -11,23 +11,27 @@ Laravel har en rigtig god ud-af-boksen log ind håndtering men for at holde proj
 ## Route::group og middleware
 Jeg har en Route::group() som sætter prefix på de routes der hører til administrationen af applikationen.
 
-```
+{% highlight PHP %}
 Route::group(['middleware' => 'checkauth', 'prefix' => 'admin'], function(){
   Route::resource('/blogposts/', 'BlogPostController');
   Route::view('/dashboard/', 'dashboard');
 });
-```
+{% endhighlight %}
+
 For at sikre brugerne er logget ind når de skal oprette nye blog posts, har jeg lavet en middleware løsning som sikrer at brugeren er kendt når en router fra denne gruppe rammes. Hver gang en route i den gruppe rammes bliver min middleware logik kaldt.
 
 ## CheckAuth middleware
 Det er latterligt nemt at lave en middleware løsning som sikrer at brugerne er logget ind når de tilgår bestemte dele af din applikation.
 
 Opret middleware
-```
+
+{% highlight PHP %}
 php artisan make:middleware navnet-på-middleware
-```
+{% endhighlight %}
+
 I mit tilfælde CheckAuth. Middleware koden oprettes i **app/Http/Middleware** mappen.
-````
+
+{% highlight php %}
 <?php
 
 namespace App\Http\Middleware;
@@ -54,18 +58,21 @@ class CheckAuth
         return $next($request);
     }
 }
-```
+{% endhighlight %}
+
 I min løsning bruger jeg Laravels **Auth::check()** funktion som automatisk sikrer at der er et User object i Requested, du kan undersøge dette ved hjælp af **$request->user()** som giver dig bruger objektet.
 
 Ved at dumpe Auth::check() i loggen kunne jeg se at den metode returnerer en boolean.
 
 For at kunne bruge min middleware løsning i min web router skal min CheckAuth klasse ind i App\Http\Kernel som vist her
-```
-    protected $routeMiddleware = [
-        ...,
-        'checkauth' => \App\Http\Middleware\CheckAuth::class
-    ];
-```
+
+{% highlight php %}
+protected $routeMiddleware = [
+    ...,
+    'checkauth' => \App\Http\Middleware\CheckAuth::class
+];
+{% endhighlight %}
+
 Og det er 'checkauth' du skal bruge når du refererer til din middleware kode i in web router.
 
 Det eneste der nu mangler er en Controller som kan håndtere logikken til at logge brugere ind med.
@@ -74,7 +81,8 @@ Jeg valgte at lave en LoginController som indeholder den smule logik der skal ti
 
 ## LoginController
 LoginController'en har kun meget lidt logik, og det er her Laravels indbyggede metoder virkelig hjælper dig til at hurtigt at kunne skrue det her sammen.
-```
+
+{% highlight php %}
 <?php
 
 namespace App\Http\Controllers;
@@ -107,21 +115,24 @@ class LoginController extends Controller
         return redirect('/login/');
     }
 }
-```
+{% endhighlight %}
+
 LoginControllerens Index metode returnerer log ind view som bare er en form hvor brugere kan indtaste email der sammen med password er Laravels default måde at identificere sig på.
 
 For at kunne bruge LoginControlleren skal der være en web router.
-```
+
+{% highlight php %}
 Route::get('login', 'LoginController@index');
 Route::post('login', 'LoginController@authenticate');
 Route::get('logout', 'LoginController@logout');
-```
+{% endhighlight %}
+
 Det sidste du nu skal er at få oprettet en bruger i databasen og huske at inkludere @csrf i den log ind for du har i dit view.
 
 ## Oprettelse af brugere i databsaen
 Jeg brugte Tinker til at oprette brugeren med og var overrasket over at opdage, at Laravel ikke pr default hashede brugerens password, jeg kunne først ikke logge ind, indtil jeg lavede et opslag i min database og kunne se at det kodeord jeg havde oprettet min bruger med, var i clear text og ikke hashed.
 
-```
+{% highlight php %}
 % php artisan tinker
 Psy Shell v0.10.4 (PHP 7.3.18 — cli) by Justin Hileman
 >>> use App\User;
@@ -137,5 +148,6 @@ Psy Shell v0.10.4 (PHP 7.3.18 — cli) by Justin Hileman
 >>> $user->save();
 => true
 >>> 
-```
+{% endhighlight %}
+
 Nu har jeg en bruger i min database med email hello@kitty.dk og kodeord hellokitty og er klar til teste løsningen.

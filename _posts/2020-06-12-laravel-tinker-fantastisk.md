@@ -17,7 +17,7 @@ Psy Shell v0.10.4 (PHP 7.3.18 — cli) by Justin Hileman
 
 Nu kan du teste kode uden at skulle skrive en Unit test eller reloade browseren igen... og igen... og igen
 
-{% highlight php %}
+{% highlight PHP %}
 use App\File;
 use App\Jobs\ProcessImage;
 
@@ -47,14 +47,16 @@ Et andet tip når du arbejder med Laravel er at lære at bruge **Log::debug()** 
 
 Du finder Laravel debug loggen under
 
-```
+{% highlight PHP %}
 storage/logs/laravel.log
-```
+{% endhighlight %}
 
 **Log::debug()** skriver til denne log og du kan selvfølgelig manuelt åbne filen og se hvad du har skrevet i loggen, eller du kan følge den interaktivt og hele tiden få seneste log besked skrevet ud i din terminal
-```
+
+{% highlight PHP %}
 tail -f storage/logs/laravel.log
-```
+{% endhighlight %}
+
 Så når du kombinerer Tinker med tail har et setup som gør at du hele tiden kan følge dine ændringer.
 
 Som VIM bruger er det et perfekt setup fordi jeg allerede laver alt mit arbejde i terminalen.

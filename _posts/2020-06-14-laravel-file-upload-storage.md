@@ -42,16 +42,18 @@ Først sikrer jeg mig, at der er uploaded en fil. Da det er muligt at uploade fl
 
 Men hele magien er denne linje kode:
 
-```
+{% highlight php %}
 $blog_file->store(env('IMAGE_THEME_FOLDER'));
-```
+{% endhighlight %}
+
 Du behøver ikke mere magi idet Laravel har alt, hvad du skal bruge implementeret i selve requested. Laravel gemmer filen og returnerer en UUID i stedet for filens navn, hvilket vil sige, at i Files tabellen i databasen gemmer jeg 'public/theme_images/5BqQwbuFJ3PB3oyheRsUMy3UdeovdHjP6WJfkfuC.jpeg'.
 
 For at ovenstående kan lade sig gøre, skal du symlinke et par mapper, men det har Laravel også gjort nemt for dig, alt hvad du skal bruge er i denne kommando
 
-```
+{% highlight php %}
 php artisan storage:link
-```
+{% endhighlight %}
+
 Desværre er det så også her filmen knækker, eller vil knække for mange. For hvordan laver man et symlink hvis den hosting partner man bruger kun tillader dig at uploade filer via ftp? I mange tilfælde er det ikke muligt at symlinke noget som helst.
 
 Men det er sgu stadig smart!
