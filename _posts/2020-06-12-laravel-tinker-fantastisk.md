@@ -60,3 +60,11 @@ tail -f storage/logs/laravel.log
 Så når du kombinerer Tinker med tail har et setup som gør at du hele tiden kan følge dine ændringer.
 
 Som VIM bruger er det et perfekt setup fordi jeg allerede laver alt mit arbejde i terminalen.
+
+### Opdatering den 1. juli
+En kommando som er nyttig og hvor tinker er virkelig god er når du skal cleare din applications cache.
+
+{% highlight PHP %}
+>>> Illuminate\Support\Facades\Cache::flush();
+=> true
+{% endhighlight %}
