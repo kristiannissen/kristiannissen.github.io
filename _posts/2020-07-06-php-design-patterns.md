@@ -15,4 +15,95 @@ I forbindelse med mit Covid-19 hygge projekt fik jeg brug for at cache data i La
 Men f.eks at bruge et [decorator pattern, eller Repository pattern](/laravel/2020/06/16/laravel-decorator-pattern.html) som det hedder i Laravel, betyder at jeg kunne føje et abstraktionslag ind i min løsning som gav mig det jeg havde brug for.
 
 ## Interface Injection
-Det navn er vist den mere moderne udgave af et ældre design pattern som jeg ikke lige kan huske navnet på, men jeg brugte det da jeg løste en [kode](https://github.com/kristiannissen/morningcoffee/tree/master/src/MorningCoffee) udfordring. Ved at bruge det design pattern i min PHP løsning, blev det muligt nemt at skifte den template parser ud jeg havde skrevet, men en der kan forstå en anden syntaks.
+Det navn er vist den mere moderne udgave af et ældre design pattern som jeg ikke lige kan huske navnet på (jeg kom efterfølgende i tanke om, at det hedder et Factory Method Pattern), men jeg brugte det da jeg løste en [kode](https://github.com/kristiannissen/morningcoffee/tree/master/src/MorningCoffee) udfordring. Ved at bruge det design pattern i min PHP løsning, blev det muligt nemt at skifte den template parser ud jeg havde skrevet, men en der kan forstå en anden syntaks.
+
+## Factory Method
+Ved at anvende et interface, er det muligt at udskifte parseren i min kode udfordring.
+
+{% highlight php %}
+<?php
+/**
+ * @ParserInterface
+ */
+namespace MorningCoffee;
+
+interface ParserInterface
+{
+    /**
+     * @param string $content
+     * @return PHP output
+     */
+    public function parse(string $content);
+}
+{% endhighlight %}
+
+Når jeg instantierer min klasse, instantierer jeg selve interfacet i stedet for den konkrete klasse som i dette tilfælde er en BashParser klasse ;) Jeg synes selv det var ret sjovt at bruge bash som template sprog. Helt vildt sjovt...
+
+Selve parseren der implementerer mit interface.
+
+{% highlight php %}
+<?php
+/**
+ * BashParser class
+ */
+namespace MorningCoffee;
+
+use MorningCoffee\ParserInterface;
+use MorningCoffee\Str;
+
+class BashParser implements ParserInterface
+{
+    public function __construct()
+    {
+        $this->content = "";
+    }
+
+    /**
+     * @param string $content
+     */
+    public function parse(string $content)
+    {
+    }
+}
+{% endhighlight %}
+
+Og til sidst instantieringen i min template løsning.
+
+{% highlight php %}
+<?php
+
+namespace MorningCoffee;
+
+use MorningCoffee\CoffeeException;
+use MorningCoffee\ParserInterface;
+/**
+ * class Coffee
+ */
+class Coffee
+{
+    protected $file_path;
+    protected $file_contents;
+    protected $parser;
+
+    /**
+     * @param ParserInterface $parser
+     */
+    public function __construct(ParserInterface $parser)
+    {
+        $this->file_path = "";
+        $this->file_content = "";
+        $this->parser = $parser;
+    }
+}
+{% endhighlight %}
+
+Bemærk at det ikke er BashParseren jeg kalder når jeg instantierer klassen, i stedet bruger jeg det interface jeg har lavet. Hvis jeg ville lave en anden parser for at benytte et andet template sprog, skal jeg blot implementere mit interface og føje den til her under.
+
+{% highlight php %}
+use MorningCoffee\Coffee;
+use MorningCoffee\BashParser;
+
+$my_coffee = new Coffee(new BashParser);
+{% endhighlight %}
+
+Det kræver lidt mere arbejde, der skal skrive noget mere kode til og der skal tænkes mere over løsningen inden de første linje kode skrives, men det betaler sig virkelig når du skal i gang med at ændre i din løsning.
