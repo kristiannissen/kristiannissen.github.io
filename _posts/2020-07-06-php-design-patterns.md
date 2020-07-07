@@ -107,3 +107,6 @@ $my_coffee = new Coffee(new BashParser);
 {% endhighlight %}
 
 Det kræver lidt mere arbejde, der skal skrive noget mere kode til og der skal tænkes mere over løsningen inden de første linje kode skrives, men det betaler sig virkelig når du skal i gang med at ændre i din løsning.
+
+## Factory Method
+Factory Method design pattern hører til i en gruppe af design patters som kaldes for Creational Patterns, i samme gruppe finder du Abstract Factory, Builder, Object Pool, Prototype og Singleton, nogle af disse er mere anvendt end andre.
