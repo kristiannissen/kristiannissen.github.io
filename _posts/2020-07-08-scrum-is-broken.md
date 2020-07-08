@@ -10,7 +10,7 @@ Efter at have arbejder med Scrum og Agile udvikling i mere end 10 år... shit ma
 Jeg ved godt at en masse evangelister ville hoppe rundt og være uenige med mig, men heldigvis kan man ikke kommentere på mine indlæg så jeg hører sikkert aldrig deres skriv til månen.
 
 ## Hvorfor det ikke virker!
-Hvis du læser det oprindelige agile manifest, mener jeg der er flere af Scrums ritualer som ikke peger i retning af manifestet. Mit navn står i øvrigt på listen med dem der har "skrevet under på manifestet", det gjorde jeg tilbage før 2010. Stik den!
+Hvis du læser det oprindelige agile manifest, mener jeg der er flere af Scrums ritualer som ikke peger i retning af manifestet. Mit navn står i øvrigt på listen med dem der har "skrevet under på manifestet", det gjorde jeg [tilbage i 2008](https://agilemanifesto.org/display/000000106.html) Kristian Nissen eteneo ApS. Stik den!
 
 Lad os tage manifestet punkt for punkt
 
