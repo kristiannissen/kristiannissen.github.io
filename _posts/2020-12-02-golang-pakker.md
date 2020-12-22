@@ -62,7 +62,6 @@ Nu kan jeg så afvikle mit program i terminalen og får følgende output
 ```
 Oh No! problemer...
 
-![Creditcs mickey_rat91](https://tenor.com/view/kermit-worried-oh-no-anxious-gif-11565777 "Oh No!")
 ### Store og små bogstaver
 Når du arbejder med pakker skal de funktioner du vil eksportere have stort begyndelses bogstav. Det vil sige at functionen purr() ikke kan exporteres mens functionen Pur() kan exporteres.
 Så hvis jeg ændrer min kode til nedenstående vil det virke.
