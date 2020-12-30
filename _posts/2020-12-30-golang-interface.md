@@ -24,7 +24,7 @@ func main() {
 ```
 Output af ovenstående vil være *map[hello:Kitty]*, men min service skal både kunne returnere string, int og nested maps.
 
-### Interface
+## Interface
 For at kunne returnere et map som indeholder flere forskellige værdier end kun string, kan jeg bruge et Interface som i eksemplet her under
 ```
 package main
@@ -45,8 +45,8 @@ func main() {
 ```
 Output af ovenstående er *map[hello:Kitty kitty:42]*
 ## REST service
-På denne måde kan min REST service returnere flere forskellige typer af data som vist her under
-````
+På denne måde kan min REST service returnere flere forskellige typer af data som vist her under (beklager formateringen)
+```
 {
 FileModTime: "2020-12-30T11:18:00Z",
 HopsData: {
@@ -77,3 +77,5 @@ Unknown: 21
 },
 NumberOfHops: 267
 }
+```
+Go lang interface giver dig mulighed for at blande forskellige data typer i et map.
