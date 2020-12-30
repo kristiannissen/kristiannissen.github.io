@@ -46,36 +46,38 @@ func main() {
 Output af ovenstående er *map[hello:Kitty kitty:42]*
 ## REST service
 På denne måde kan min REST service returnere flere forskellige typer af data som vist her under (beklager formateringen)
-````
+
+```
 {
-FileModTime: "2020-12-30T11:18:00Z",
-HopsData: {
-Argentina: 1,
-Australia: 15,
-Austria and Slovenia: 1,
-Belgium: 5,
-Canada: 2,
-Czech Republic: 2,
-Czechia: 8,
-Czechoslovakia: 1,
-Former Yugoslavia: 1,
-France: 6,
-Germany: 27,
-Japan: 9,
-New Zealand: 23,
-Poland: 3,
-Russia: 1,
-Serbia: 2,
-Slovenia: 16,
-South Africa: 3,
-Switzerland: 1,
-UK: 45,
-UK / France: 1,
-US: 72,
-Uncertain (Belgium or Denmark): 1,
-Unknown: 21
-},
-NumberOfHops: 267
+	"FileModTime":"2020-12-30T11:18:00Z",
+	"HopsData":{
+		"Argentina":1,
+		"Australia":15,
+		"Austria and Slovenia":1,
+		"Belgium":5,
+		"Canada":2,
+		"Czech Republic":2,
+		"Czechia":8,
+		"Czechoslovakia":1,
+		"Former Yugoslavia":1,
+		"France":6,
+		"Germany":27,
+		"Japan":9,
+		"New Zealand":23,
+		"Poland":3,
+		"Russia":1,
+		"Serbia":2,
+		"Slovenia":16,
+		"South Africa":3,
+		"Switzerland":1,
+		"UK":45,
+		"UK / France":1,
+		"US":72,
+		"Uncertain (Belgium or Denmark)":1,
+		"Unknown":21
+	},
+	"NumberOfHops":267
 }
-````
+```
+
 Go lang interface giver dig mulighed for at blande forskellige data typer i et map.
